@@ -39,7 +39,7 @@
 	""",
 	# define data files (always loaded at installation)
 	'data': [
-
+		'views/sales_commission_menu.xml',
 	],#END data file defenition
 	# data files containing optionally loaded demonstration data
 	'demo': [

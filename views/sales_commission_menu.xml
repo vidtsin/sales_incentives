@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+
+		<!-- Menu Items -->
+		<menuitem id="sales_commission_menu" name="Sales Commission" sequence="5"/>
+
+		<menuitem id="sales_commission_submenu" sequence="1" name="Sales Commission" parent="sales_commission_menu"/>
+		<menuitem id="sales_commission_configmenu" sequence="10" name="Configuration" parent="sales_commission_menu"/>
+
+		<menuitem name="Sales Teams" id="sales_team_config" parent="sales_commission_configmenu" action="sales_team.sales_team_config_action"/>
+
+	</data>
+</odoo>
