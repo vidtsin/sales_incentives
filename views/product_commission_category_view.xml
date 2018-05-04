@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+
+		<record id="commission_category_view_form" model="ir.ui.view">
+			<field name="name">Commission Category Form</field>
+			<field name="model">commission.category</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<group>
+							<group>
+								<field name="name"/>
+							</group>
+							<group>
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		
+		<!-- view defenitions tree -->
+		<record id="commission_category_view_tree" model="ir.ui.view">
+			<field name="name">Commission Category Tree</field>
+			<field name="model">commission.category</field>
+			<field name="arch" type="xml">
+				<tree>
+					<field name="name"/>
+				</tree>
+			</field>
+		</record>
+		
+		<!--  actions -->
+		<record id="commission_category_action_view" model="ir.actions.act_window">
+			<field name="name">Commission Category</field>
+			<field name="res_model">commission.category</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="view_id" ref=""/>
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+		</record>
+
+		<!-- Menu Items -->
+		<menuitem action="commission_category_action_view" id="commission_category_menu" parent="sales_commission_configmenu" sequence="1"/>
+
+	</data>
+</odoo>

@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+#-*- coding: utf-8 -*-
 
 ##############################################################################
 #
@@ -21,35 +21,15 @@
 #    If not, see <https://www.gnu.org/licenses/>.
 #
 ##############################################################################
+import logging
+_logger = logging.getLogger(__name__)
 
-{
-	'name': 'Commission and Incentive Management for Ace',
-	'version': '1.0',
-	'author': 'VID Techno Solutions',
-	'website':'http://vidts.in/',
-	'category': 'Sales',
-	'depends': [
-		'sale',
-		'sales_team',
-		'product_master',
-		'crm',
-	],
-	'description': """
-		All management related with commisions and incentive for Ace
-	""",
-	# define data files (always loaded at installation)
-	'data': [
-		'views/sales_commission_menu.xml',
-		'views/financial_year_sale_target_view.xml',
-		'views/salesteam_manager_target_view.xml',
-		'views/sales_excutive_target_view.xml',
-		'views/product_commission_category_view.xml',
-	],#END data file defenition
-	# data files containing optionally loaded demonstration data
-	'demo': [
-	
-	],
-	'qweb': [
+from odoo import api, models, fields, _
+from odoo.exceptions import Warning, UserError
 
-	],
-}
+class CommissionProductCategory(models.Model):
+	_name='commission.category'
+
+	name = fields.Char("Category Name", required=True)
+
+	_sql_constraints = [('name_uniq', 'unique (name)', 'Category Name must be unique'),]
