@@ -42,5 +42,4 @@ class SalesExecutiveTarget(models.Model):
 	minimum_incentive = fields.Float('MT %')
 	total_target = fields.Monetary('Total Target')
 	total_incentive = fields.Float('TT %')
-	exceeding_target = fields.Monetary('Exceeding Target')
-	exceeding_incentive = fields.Float('ET %')
+	exceeding_incentive = fields.Float('Exceeding Target %')
