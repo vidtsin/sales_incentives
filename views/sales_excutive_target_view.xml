@@ -11,6 +11,7 @@
 					<sheet>
 						<group>
 							<group>
+								<field name="salesteam_target_id"/>
 								<field name="currency_id" invisible="1"/>
 								<field name="breakeaven_target"/>
 								<field name="minimum_target"/>

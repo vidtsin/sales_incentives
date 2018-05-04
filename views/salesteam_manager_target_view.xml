@@ -25,6 +25,22 @@
 								<field name="below_msp_credit"/>
 							</group>
 						</group>
+						<notebook>
+							<page name="sales_executives_target" string="Sales Executives Target">
+								<field name="sales_executives_target">
+									<tree editable="bottom">
+										<field name="sales_executive"/>
+										<field name="breakeaven_target"/>
+										<field name="breakeaven_incentive"/>
+										<field name="minimum_target"/>
+										<field name="minimum_incentive"/>
+										<field name="total_target"/>
+										<field name="total_incentive"/>
+										<field name="exceeding_incentive"/>
+									</tree>
+								</field>
+							</page>
+						</notebook>
 					</sheet>
 					<div class="oe_chatter">
 						<field name="message_follower_ids" widget="mail_followers"/>

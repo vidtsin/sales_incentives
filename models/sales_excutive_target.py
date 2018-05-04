@@ -34,12 +34,14 @@ class SalesExecutiveTarget(models.Model):
 	_description = 'Sales Executive Target'
 	_inherit = ['mail.thread']
 
-	sales_executive =  fields.Many2one('res.uses','Sales Executive')
+	sales_executive =  fields.Many2one('res.users','Sales Executive', copy=False, required=True, track_visibility='onchange')
 	currency_id = fields.Many2one('res.currency', string='Currency', required=True , default=lambda self: self.env.user.company_id.currency_id, copy=False)
-	breakeaven_target = fields.Monetary('Breakeaven Target')
-	breakeaven_incentive = fields.Float("BT %")
-	minimum_target = fields.Monetary('Minimum Target')
-	minimum_incentive = fields.Float('MT %')
-	total_target = fields.Monetary('Total Target')
-	total_incentive = fields.Float('TT %')
-	exceeding_incentive = fields.Float('Exceeding Target %')
+	breakeaven_target = fields.Monetary('Breakeaven Target', copy=False, track_visibility='onchange')
+	breakeaven_incentive = fields.Float("BT Incentive %", copy=False, track_visibility='onchange')
+	minimum_target = fields.Monetary('Minimum Target', copy=False, track_visibility='onchange')
+	minimum_incentive = fields.Float('MT Incentive %', copy=False, track_visibility='onchange')
+	total_target = fields.Monetary('Total Target', copy=False, track_visibility='onchange')
+	total_incentive = fields.Float('TT Incentive %', copy=False, track_visibility='onchange')
+	exceeding_incentive = fields.Float('Exceeding Target Incentive %', copy=False, track_visibility='onchange')
+	salesteam_target_id = fields.Many2one('salesteam.manager.target','Salesteam Target')
+	
