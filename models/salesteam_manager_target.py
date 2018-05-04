@@ -45,3 +45,11 @@ class SalesTeamManagerTarget(models.Model):
 	below_msp_dedit = fields.Float('Below MSP Debit for SM', copy=False, track_visibility='onchange')
 	financialyear_saletarget_id = fields.Many2one('financialyear.saletarget',"Financial Year", required=True)
 	
+	@api.multi
+	@api.depends('financialyear_saletarget_id','sales_team', 'total_target')
+	def name_get(self):
+		result = []
+		for salesteam_target in self:
+			name = salesteam_target.financialyear_saletarget_id.name + ' '+salesteam_target.sales_team.name +' Target '+ str(salesteam_target.total_target)
+			result.append((salesteam_target.id, name))
+		return result
