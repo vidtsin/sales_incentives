@@ -44,6 +44,7 @@
 		'views/salesteam_manager_target_view.xml',
 		'views/sales_excutive_target_view.xml',
 		'views/product_commission_category_view.xml',
+		'data/product_commission_category_data.xml',
 	],#END data file defenition
 	# data files containing optionally loaded demonstration data
 	'demo': [
