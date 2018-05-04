@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+
+		<!--  view defenitions form -->
+		<record id="sales_excutive_target_view_form" model="ir.ui.view">
+			<field name="name">Sales Excutive Target Form</field>
+			<field name="model">sales.excutive.target</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<group>
+							<group>
+								<field name="currency_id" invisible="1"/>
+								<field name="breakeaven_target"/>
+								<field name="minimum_target"/>
+								<field name="total_target"/>
+								<field name="exceeding_target"/>
+							</group>
+							<group>
+								<field name="sales_executive"/>
+								<field name="breakeaven_incentive"/>
+								<field name="minimum_incentive"/>
+								<field name="total_incentive"/>
+								<field name="exceeding_incentive"/>
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		
+		<!-- view defenitions tree -->
+		<record id="sales_excutive_target_view_tree" model="ir.ui.view">
+			<field name="name">Sales Excutive Target Tree</field>
+			<field name="model">sales.excutive.target</field>
+			<field name="arch" type="xml">
+				<tree>
+				</tree>
+			</field>
+		</record>
+
+		<!--  actions -->
+		<record id="sales_excutive_target_action_view" model="ir.actions.act_window">
+			<field name="name">Sales Excutive Target</field>
+			<field name="res_model">sales.excutive.target</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="view_id" ref=""/>
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+		</record>
+
+		<!-- Menu Items -->
+		<menuitem action="sales_excutive_target_action_view" id="sales_excutive_target_menu" parent="sales_commission_configmenu" sequence="3"/>
+
+	</data>
+</odoo>
