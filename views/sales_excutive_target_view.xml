@@ -25,6 +25,16 @@
 								<field name="exceeding_incentive"/>
 							</group>
 						</group>
+						<notebook>
+							<page name="target_splitup" string="Target Splitup">
+								<field name="target_splitup">
+									<tree editable="bottom">
+										<field name="commission_category"/>
+										<field name="target"/>
+									</tree>
+								</field>
+							</page>
+						</notebook>
 					</sheet>
 					<div class="oe_chatter">
 						<field name="message_follower_ids" widget="mail_followers"/>

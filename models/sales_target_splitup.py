@@ -21,9 +21,20 @@
 #    If not, see <https://www.gnu.org/licenses/>.
 #
 ##############################################################################
-import financialyear_saletarget
-import salesteam_manager_target
-import sales_excutive_target
-import product_commission_category
-import commission_product_template
-import sales_target_splitup
+import re
+import datetime
+
+import logging
+_logger = logging.getLogger(__name__)
+
+from odoo import api, models, fields, _
+
+class SalesTargetSplitup(models.Model):
+	_name = 'sales.target.splitup'
+	_description = 'Sales Target Splitup'
+	_inherit = ['mail.thread']
+
+	sales_executive_target_id = fields.Many2one('sales.excutive.target', required=True, copy=False, track_visibility='onchange')
+	commission_category = fields.Many2one('commission.category',"Commission Category", required=True, copy=False, track_visibility='onchange')
+	currency_id = fields.Many2one('res.currency', string='Currency', default=lambda self: self.env.user.company_id.currency_id, copy=False)
+	target = fields.Monetary('Target', copy=False, track_visibility='onchange')

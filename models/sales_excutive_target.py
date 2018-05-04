@@ -44,4 +44,4 @@ class SalesExecutiveTarget(models.Model):
 	total_incentive = fields.Float('TT Incentive %', copy=False, track_visibility='onchange')
 	exceeding_incentive = fields.Float('Exceeding Target Incentive %', copy=False, track_visibility='onchange')
 	salesteam_target_id = fields.Many2one('salesteam.manager.target','Salesteam Target')
-	
+	target_splitup = fields.One2many('sales.target.splitup','sales_executive_target_id')
