@@ -23,6 +23,22 @@
 							<!-- 	<field name="weekly_target"/> -->
 							</group>
 						</group>
+						<notebook>
+							<page name="sales_team_target" string="Sales Team Target">
+								<field name="sales_team_target">
+									<tree editable="bottom">
+										<field name="sales_team"/>
+										<field name="sales_manager"/>
+										<field name="total_target"/>
+										<field name="sae_target"/>
+										<field name="self_direct_target"/>
+										<field name="self_direct_incentive"/>
+										<field name="below_msp_credit"/>
+										<field name="below_msp_dedit"/>
+									</tree>
+								</field>
+							</page>
+						</notebook>
 					</sheet>
 					<div class="oe_chatter">
 						<field name="message_follower_ids" widget="mail_followers"/>

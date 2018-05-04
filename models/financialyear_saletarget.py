@@ -42,6 +42,7 @@ class FinancialYearSaleTarget(models.Model):
 	company_id = fields.Many2one('res.company', string='Company', readonly=True, default=lambda self: self.env.user.company_id, required=True, copy=False)
 	# weekly_target = fields.Monetary('Weekly Target',  copy=False, compute="compute_weekly_target", store=True)
 	# sales_manager = fields.Many2one('res.users',"Sales Manager", default=lambda self: self.env.user, required=True)
+	sales_team_target = fields.One2many('salesteam.manager.target','financialyear_saletarget_id')
 
 	_sql_constraints = [('name_uniq', 'unique (name)', 'This Financial Year Target already exists'),]
 

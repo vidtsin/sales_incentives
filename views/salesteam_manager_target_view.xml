@@ -12,6 +12,7 @@
 						<group>
 							<group>
 								<field name="sales_team"/>
+								<field name="financialyear_saletarget_id"/>
 								<field name="currency_id" invisible="1"/>
 								<field name="sae_target"/>
 								<field name="self_direct_incentive"/>

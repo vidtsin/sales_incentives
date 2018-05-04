@@ -43,5 +43,5 @@ class SalesTeamManagerTarget(models.Model):
 	self_direct_incentive = fields.Float('Incentive %', copy=False, track_visibility='onchange', required=True)
 	below_msp_credit = fields.Float('Below MSP Credit for SaE', copy=False, track_visibility='onchange')
 	below_msp_dedit = fields.Float('Below MSP Debit for SM', copy=False, track_visibility='onchange')
-
+	financialyear_saletarget_id = fields.Many2one('financialyear.saletarget',"Financial Year")
 	
