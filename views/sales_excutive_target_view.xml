@@ -15,7 +15,6 @@
 								<field name="breakeaven_target"/>
 								<field name="minimum_target"/>
 								<field name="total_target"/>
-								<field name="exceeding_target"/>
 							</group>
 							<group>
 								<field name="sales_executive"/>
@@ -36,6 +35,10 @@
 			<field name="model">sales.excutive.target</field>
 			<field name="arch" type="xml">
 				<tree>
+					<field name="sales_executive"/>
+					<field name="total_target"/>
+					<field name="total_incentive"/>
+					<field name="exceeding_incentive"/>
 				</tree>
 			</field>
 		</record>
