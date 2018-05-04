@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+
+		<!--  view defenitions form -->
+		<record id="salesteam_manager_target_view_form" model="ir.ui.view">
+			<field name="name">Salesteam Manager Target Form</field>
+			<field name="model">salesteam.manager.target</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<group>
+							<group>
+								<field name="sales_team"/>
+								<field name="currency_id" invisible="1"/>
+								<field name="sae_target"/>
+								<field name="self_direct_incentive"/>
+								<field name="below_msp_dedit"/>
+							</group>
+							<group>
+								<field name="sales_manager"/>
+								<field name="total_target"/>
+								<field name="self_direct_target"/>
+								<field name="below_msp_credit"/>
+							</group>
+						</group>
+					</sheet>
+					<div class="oe_chatter">
+						<field name="message_follower_ids" widget="mail_followers"/>
+						<field name="message_ids" widget="mail_thread"/>
+					</div>
+				</form>
+			</field>
+		</record>
+		
+		<!-- view defenitions tree -->
+		<record id="salesteam_manager_target_view_tree" model="ir.ui.view">
+			<field name="name">Salesteam Manager Target Tree</field>
+			<field name="model">salesteam.manager.target</field>
+			<field name="arch" type="xml">
+				<tree>
+					<field name="sales_team"/>
+					<field name="sales_manager"/>
+					<field name="total_target"/>
+					<field name="sae_target"/>
+					<field name="self_direct_target"/>
+					<field name="self_direct_incentive"/>
+				</tree>
+			</field>
+		</record>
+		
+		<!--  actions -->
+		<record id="salesteam_manager_target_action_view" model="ir.actions.act_window">
+			<field name="name">Salesteam Manager Target</field>
+			<field name="res_model">salesteam.manager.target</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="view_id" ref=""/>
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+		</record>
+
+		<!-- Menu Items -->
+		<menuitem action="salesteam_manager_target_action_view" id="salesteam_manager_target_menu" parent="sales_commission_configmenu" sequence="2"/>
+
+	</data>
+</odoo>

@@ -41,6 +41,7 @@
 	'data': [
 		'views/sales_commission_menu.xml',
 		'views/financial_year_sale_target_view.xml',
+		'views/salesteam_manager_target_view.xml',
 	],#END data file defenition
 	# data files containing optionally loaded demonstration data
 	'demo': [

@@ -22,3 +22,4 @@
 #
 ##############################################################################
 import financialyear_saletarget
+import salesteam_manager_target
