@@ -35,7 +35,7 @@ class SalesTeamManagerTarget(models.Model):
 	_inherit = ['mail.thread']
 
 	sales_team = fields.Many2one('crm.team', "Sales Team", copy=False, required=True, track_visibility='onchange')
-	sales_manager = fields.Many2one('res.users', track_visibility='onchange', required=True)
+	sales_manager = fields.Many2one('res.users', related='sales_team.user_id', track_visibility='onchange', required=True, readonly=True)
 	currency_id = fields.Many2one('res.currency', string='Currency', required=True , default=lambda self: self.env.user.company_id.currency_id, copy=False)
 	total_target = fields.Monetary('Yearly Target Amount', copy=False, track_visibility='onchange', required=True)
 	sae_target = fields.Monetary('Sales Executives Target', copy=False, track_visibility='onchange', required=True)
