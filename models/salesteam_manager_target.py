@@ -50,6 +50,6 @@ class SalesTeamManagerTarget(models.Model):
 	def name_get(self):
 		result = []
 		for salesteam_target in self:
-			name = salesteam_target.financialyear_saletarget_id.name + ' '+salesteam_target.sales_team.name +' Target '+ str(salesteam_target.total_target)
+			name = salesteam_target.financialyear_saletarget_id.name + ' '+salesteam_target.sales_team.name +' Sales Team Target '+ str(salesteam_target.total_target)
 			result.append((salesteam_target.id, name))
 		return result
