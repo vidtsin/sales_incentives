@@ -21,8 +21,13 @@
 #    If not, see <https://www.gnu.org/licenses/>.
 #
 ##############################################################################
-import financialyear_saletarget
-import salesteam_manager_target
-import sales_excutive_target
-import product_commission_category
-import commission_product_template
+import logging
+_logger = logging.getLogger(__name__)
+
+from odoo import api, models, fields, _
+from odoo.exceptions import Warning, UserError
+
+class CommissionProductTemplate(models.Model):
+	_inherit='product.template'
+
+	commission_category = fields.Many2one('commission.category',"Commission Category")
