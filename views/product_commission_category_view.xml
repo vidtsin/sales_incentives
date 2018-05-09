@@ -43,7 +43,7 @@
 		</record>
 
 		<!-- Menu Items -->
-		<menuitem action="commission_category_action_view" id="commission_category_menu" parent="sales_commission_configmenu" sequence="1"/>
+		<menuitem action="commission_category_action_view" id="commission_category_menu" parent="sales_commission_configmenu" sequence="4"/>
 
 	</data>
 </odoo>
